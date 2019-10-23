@@ -25,6 +25,11 @@
     ],
     "ios": {
       "supportsTablet": true
-    }
+    },
+	 "android": {
+      "package": "com.yourcompany.yourappname"
+    },
+    "description": "Stackoverflow questions tag prediction using ML",
+    "githubUrl": "https://github.com/joshiadvait8/overCode"
   }
 }

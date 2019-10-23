@@ -8,7 +8,7 @@ import {
 } from "react-native";
 import Tags from "react-native-tags";
 import { HeaderScreen } from "./screens/header";
-import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scrollview";
+import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 
 class App extends Component {
   constructor(props) {
@@ -19,24 +19,34 @@ class App extends Component {
     };
   }
 
-  getTags = question => {
-    fetch("https://api.overCode.com/q=" + question)
-      // fetch("https://api.myjson.com/bins/tj0ow")
+  getTags = () => {
+    const question = this.state.text;
+    this.setState({
+      mytags: []
+    });
+    // fetch("https://api.myjson.com/bins/129gwo")
+    fetch("https://overcode-tag-ml-api.herokuapp.com/?q=" + question)
       .then(response => response.json())
       .then(json => {
-        // console.log(json.tags);
+        console.log("Question: ", question);
+
         this.setState({
-          mytags: [...this.state.mytags, json.tags]
+          mytags: [...this.state.mytags, ...json.tags]
         });
-      });
+      })
+      .catch(e => console.log("error" + e));
   };
 
   render() {
     return (
       <View style={{ flex: 1 }}>
-        <KeyboardAwareScrollView enableOnAndroid={true}>
+        <KeyboardAwareScrollView
+          enableOnAndroid={true}
+          enableAutomaticScroll={true}
+        >
           <HeaderScreen />
-          <View style={{ flex: 4, paddingTop: 50, margin: 20 }}>
+
+          <View style={{ paddingTop: 50, margin: 15 }}>
             <TextInput
               placeholder="Title"
               style={{
@@ -47,14 +57,13 @@ class App extends Component {
                 height: 40,
                 margin: 10
               }}
-              multiline={true}
               autoCorrect={false}
               autoCapitalize="none"
               keyboardType="default"
               onChangeText={text => {
                 this.setState({ text });
               }}
-              onEndEditing={text => this.getTags(this.state.text)}
+              onEndEditing={text => this.getTags()}
               value={this.state.text}
             />
 
@@ -66,7 +75,7 @@ class App extends Component {
                 borderWidth: 1,
                 borderRadius: 5,
                 height: 100,
-                margin: 10
+                margin: 8
               }}
               multiline={true}
               autoCorrect={false}
