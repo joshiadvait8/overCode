@@ -1,8 +1,13 @@
-<div align="center>
-  <h1> overCode</h1>
-  <p>Stack overflow questions tag prediction using ML</p>
-</div>
+<h1 align="center"> overCode </h1> <br>
+<p align="center">
+  <a href="https://expo.io/@joshidvait8/oveCode">
+    <img alt="oveCode" width="100" title="overcode" src="https://i.imgur.com/Rqs7SYt.png" width="450">
+  </a>
+</p>
 
+<p align="center">
+  Stackoverflow quetion's tag prediction using Machine Learning ML
+</p>
 ------------------------------------
 
 ### Technology Stack
