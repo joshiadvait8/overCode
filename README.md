@@ -53,3 +53,14 @@ cd overCode && npm install
 ```
 then run `react-native run-ios` or `react-native run-android`
 
+
+### Reference Repositories
+- [Frontend Repository](https://github.com/joshiadvait8/overCode)
+- [Backend API Repository](https://github.com/joshiadvait8/overcode-Tag-Prediction-Backend)
+- [ML Part](https://github.com/joshiadvait8/Stack-Overflow-Tag-Prediction)
+
+
+
+### Contributors
+- [@ssvas1997](https://github.com/ssvas1997)
+- [@joshiadvait8](https://github.com/joshiadvait8)
