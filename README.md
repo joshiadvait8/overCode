@@ -6,9 +6,15 @@
 </p>
 
 <p align="center">
-  Stackoverflow quetion's tag prediction using Machine Learning ML
+  <h3>Stackoverflow quetion's tag prediction using Machine Learning ML</h3>
 </p>
-------------------------------------
+
+### Demo
+
+  <img width="200" src=https://i.imgur.com/aQOQkqn.gif>
+
+
+
 
 ### Technology Stack
 - Frontend Framework - React Native
